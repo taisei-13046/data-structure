@@ -47,51 +47,51 @@ describe("LinkedList", () => {
     expect(linkedList.toString()).toBe("1,4,2,3,10");
   });
 
-  //it("should delete node by value from linked list", () => {
-  //  const linkedList = new LinkedList();
+  it("should delete node by value from linked list", () => {
+    const linkedList = new LinkedList();
 
-  //  expect(linkedList.delete(5)).toBeNull();
+    expect(linkedList.delete(5)).toBeNull();
 
-  //  linkedList.append(1);
-  //  linkedList.append(1);
-  //  linkedList.append(2);
-  //  linkedList.append(3);
-  //  linkedList.append(3);
-  //  linkedList.append(3);
-  //  linkedList.append(4);
-  //  linkedList.append(5);
+    linkedList.append(1);
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
+    linkedList.append(3);
+    linkedList.append(3);
+    linkedList.append(4);
+    linkedList.append(5);
 
-  //  expect(linkedList.head.toString()).toBe("1");
-  //  expect(linkedList.tail.toString()).toBe("5");
+    expect(linkedList.head.toString()).toBe("1");
+    expect(linkedList.tail.toString()).toBe("5");
 
-  //  const deletedNode = linkedList.delete(3);
-  //  expect(deletedNode.value).toBe(3);
-  //  expect(linkedList.toString()).toBe("1,1,2,4,5");
+    const deletedNode = linkedList.delete(3);
+    expect(deletedNode.value).toBe(3);
+    expect(linkedList.toString()).toBe("1,1,2,4,5");
 
-  //  linkedList.delete(3);
-  //  expect(linkedList.toString()).toBe("1,1,2,4,5");
+    linkedList.delete(3);
+    expect(linkedList.toString()).toBe("1,1,2,4,5");
 
-  //  linkedList.delete(1);
-  //  expect(linkedList.toString()).toBe("2,4,5");
+    linkedList.delete(1);
+    expect(linkedList.toString()).toBe("2,4,5");
 
-  //  expect(linkedList.head.toString()).toBe("2");
-  //  expect(linkedList.tail.toString()).toBe("5");
+    expect(linkedList.head.toString()).toBe("2");
+    expect(linkedList.tail.toString()).toBe("5");
 
-  //  linkedList.delete(5);
-  //  expect(linkedList.toString()).toBe("2,4");
+    linkedList.delete(5);
+    expect(linkedList.toString()).toBe("2,4");
 
-  //  expect(linkedList.head.toString()).toBe("2");
-  //  expect(linkedList.tail.toString()).toBe("4");
+    expect(linkedList.head.toString()).toBe("2");
+    expect(linkedList.tail.toString()).toBe("4");
 
-  //  linkedList.delete(4);
-  //  expect(linkedList.toString()).toBe("2");
+    linkedList.delete(4);
+    expect(linkedList.toString()).toBe("2");
 
-  //  expect(linkedList.head.toString()).toBe("2");
-  //  expect(linkedList.tail.toString()).toBe("2");
+    expect(linkedList.head.toString()).toBe("2");
+    expect(linkedList.tail.toString()).toBe("2");
 
-  //  linkedList.delete(2);
-  //  expect(linkedList.toString()).toBe("");
-  //});
+    linkedList.delete(2);
+    expect(linkedList.toString()).toBe("");
+  });
 
   //it("should delete linked list tail", () => {
   //  const linkedList = new LinkedList();
