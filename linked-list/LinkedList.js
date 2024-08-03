@@ -141,6 +141,33 @@ export default class LinkedList {
   }
 
   /**
+   * @param {Object} findParams
+   * @param {*} findParams.value
+   * @param {function} [findParams.callback]
+   * @return {LinkedListNode}
+   */
+  find({ value = undefined, callback = undefined }) {
+    if (!this.head) {
+      return null;
+    }
+    let returnNode = null;
+    let currentNode = this.head;
+    while (currentNode) {
+      if (callback && callback(currentNode.value)) {
+        returnNode = currentNode;
+        break;
+      }
+      if (this.compare.equal(currentNode.value, value)) {
+        returnNode = currentNode;
+        break;
+      }
+      currentNode = currentNode.next;
+    }
+
+    return returnNode;
+  }
+
+  /**
    * @return {LinkedListNode[]}
    */
   toArray() {
