@@ -21,6 +21,11 @@ export default class Stack {
 		return this.linkedList.head.value;
 	}
 
+	pop() {
+		const returnData = this.linkedList.deleteHead();
+		return returnData ? returnData.value : null;
+	}
+
 	toString(callback) {
 		return this.linkedList.toString(callback);
 	}

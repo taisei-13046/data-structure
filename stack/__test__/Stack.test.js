@@ -28,27 +28,27 @@ describe("Stack", () => {
 		expect(stack.peek()).toBe(2);
 	});
 
-	// it("should check if stack is empty", () => {
-	// 	const stack = new Stack();
+	it("should check if stack is empty", () => {
+		const stack = new Stack();
 
-	// 	expect(stack.isEmpty()).toBe(true);
+		expect(stack.isEmpty()).toBe(true);
 
-	// 	stack.push(1);
+		stack.push(1);
 
-	// 	expect(stack.isEmpty()).toBe(false);
-	// });
+		expect(stack.isEmpty()).toBe(false);
+	});
 
-	// it("should pop data from stack", () => {
-	// 	const stack = new Stack();
+	it("should pop data from stack", () => {
+		const stack = new Stack();
 
-	// 	stack.push(1);
-	// 	stack.push(2);
+		stack.push(1);
+		stack.push(2);
 
-	// 	expect(stack.pop()).toBe(2);
-	// 	expect(stack.pop()).toBe(1);
-	// 	expect(stack.pop()).toBeNull();
-	// 	expect(stack.isEmpty()).toBe(true);
-	// });
+		expect(stack.pop()).toBe(2);
+		expect(stack.pop()).toBe(1);
+		expect(stack.pop()).toBeNull();
+		expect(stack.isEmpty()).toBe(true);
+	});
 
 	// it("should be possible to push/pop objects", () => {
 	// 	const stack = new Stack();
