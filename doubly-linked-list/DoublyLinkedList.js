@@ -139,6 +139,59 @@ export default class DoublyLinkedList {
   }
 
   /**
+   * @param {Object} findParams
+   * @param {*} findParams.value
+   * @param {function} [findParams.callback]
+   * @return {DoublyLinkedListNode}
+   */
+  find({ value = undefined, callback = undefined }) {
+    if (!this.head) {
+      return null;
+    }
+
+    let currentNode = this.head;
+    let returnNode = null;
+    while (currentNode) {
+      if (callback && callback(currentNode.value)) {
+        return currentNode;
+      }
+      if (value !== undefined && this.compare.equal(currentNode.value, value)) {
+        return currentNode;
+      } else {
+        currentNode = currentNode.next;
+      }
+    }
+
+    return returnNode;
+  }
+
+  /**
+   * Reverse a linked list.
+   * @returns {DoublyLinkedList}
+   */
+  reverse() {
+    let currNode = this.head;
+    let prevNode = null;
+    let nextNode = null;
+
+    while (currNode) {
+      nextNode = currNode.next;
+      prevNode = currNode.previous;
+
+      currNode.next = prevNode;
+      currNode.previous = nextNode;
+
+      prevNode = currNode;
+      currNode = nextNode;
+    }
+
+    this.tail = this.head;
+    this.head = prevNode;
+
+    return this;
+  }
+
+  /**
    * @return {DoublyLinkedListNode[]}
    */
   toArray() {
