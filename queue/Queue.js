@@ -9,6 +9,11 @@ export default class Queue {
 		this.linkedList.append(value);
 	}
 
+	dequeue() {
+		const removeHead = this.linkedList.deleteHead();
+		return removeHead ? removeHead.value : null;
+	}
+
 	toString(callback) {
 		return this.linkedList.toString(callback);
 	}
