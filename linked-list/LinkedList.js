@@ -23,6 +23,17 @@ export default class LinkedList {
     return this;
   }
 
+  prepend(value) {
+    const newNode = new LinkedListNode(value, this.head);
+    this.head = newNode;
+
+    if (!this.tail) {
+      this.tail = newNode;
+    }
+
+    return this;
+  }
+
   /**
    * @return {LinkedListNode[]}
    */

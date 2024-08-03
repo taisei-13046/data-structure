@@ -19,18 +19,18 @@ describe("LinkedList", () => {
     expect(linkedList.tail.next).toBeNull();
   });
 
-  //it("should prepend node to linked list", () => {
-  //  const linkedList = new LinkedList();
+  it("should prepend node to linked list", () => {
+    const linkedList = new LinkedList();
 
-  //  linkedList.prepend(2);
-  //  expect(linkedList.head.toString()).toBe("2");
-  //  expect(linkedList.tail.toString()).toBe("2");
+    linkedList.prepend(2);
+    expect(linkedList.head.toString()).toBe("2");
+    expect(linkedList.tail.toString()).toBe("2");
 
-  //  linkedList.append(1);
-  //  linkedList.prepend(3);
+    linkedList.append(1);
+    linkedList.prepend(3);
 
-  //  expect(linkedList.toString()).toBe("3,2,1");
-  //});
+    expect(linkedList.toString()).toBe("3,2,1");
+  });
 
   //it("should insert node to linked list", () => {
   //  const linkedList = new LinkedList();
