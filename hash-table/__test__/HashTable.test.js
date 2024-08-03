@@ -56,36 +56,36 @@ describe("HashTable", () => {
 		expect(hashTable.get("d")).toBe("ocean-new");
 	});
 
-	// it("should be possible to add objects to hash table", () => {
-	// 	const hashTable = new HashTable();
+	it("should be possible to add objects to hash table", () => {
+		const hashTable = new HashTable();
 
-	// 	hashTable.set("objectKey", { prop1: "a", prop2: "b" });
+		hashTable.set("objectKey", { prop1: "a", prop2: "b" });
 
-	// 	const object = hashTable.get("objectKey");
-	// 	expect(object).toBeDefined();
-	// 	expect(object.prop1).toBe("a");
-	// 	expect(object.prop2).toBe("b");
-	// });
+		const object = hashTable.get("objectKey");
+		expect(object).toBeDefined();
+		expect(object.prop1).toBe("a");
+		expect(object.prop2).toBe("b");
+	});
 
-	// it("should track actual keys", () => {
-	// 	const hashTable = new HashTable(3);
+	it("should track actual keys", () => {
+		const hashTable = new HashTable(3);
 
-	// 	hashTable.set("a", "sky-old");
-	// 	hashTable.set("a", "sky");
-	// 	hashTable.set("b", "sea");
-	// 	hashTable.set("c", "earth");
-	// 	hashTable.set("d", "ocean");
+		hashTable.set("a", "sky-old");
+		hashTable.set("a", "sky");
+		hashTable.set("b", "sea");
+		hashTable.set("c", "earth");
+		hashTable.set("d", "ocean");
 
-	// 	expect(hashTable.getKeys()).toEqual(["a", "b", "c", "d"]);
-	// 	expect(hashTable.has("a")).toBe(true);
-	// 	expect(hashTable.has("x")).toBe(false);
+		expect(hashTable.getKeys()).toEqual(["a", "b", "c", "d"]);
+		expect(hashTable.has("a")).toBe(true);
+		expect(hashTable.has("x")).toBe(false);
 
-	// 	hashTable.delete("a");
+		hashTable.delete("a");
 
-	// 	expect(hashTable.has("a")).toBe(false);
-	// 	expect(hashTable.has("b")).toBe(true);
-	// 	expect(hashTable.has("x")).toBe(false);
-	// });
+		expect(hashTable.has("a")).toBe(false);
+		expect(hashTable.has("b")).toBe(true);
+		expect(hashTable.has("x")).toBe(false);
+	});
 
 	// it("should get all the values", () => {
 	// 	const hashTable = new HashTable(3);
