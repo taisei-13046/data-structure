@@ -100,6 +100,28 @@ export default class LinkedList {
   }
 
   /**
+   * @return {LinkedListNode}
+   */
+  deleteTail() {
+    let deletedTail = this.tail;
+    if (this.tail === this.head) {
+      this.head = null;
+      this.tail = null;
+      return deletedTail;
+    }
+    let currentNode = this.head;
+    while (currentNode.next) {
+      if (currentNode.next.next === null) {
+        currentNode.next = null;
+      } else {
+        currentNode = currentNode.next;
+      }
+    }
+    this.tail = currentNode;
+    return deletedTail;
+  }
+
+  /**
    * @return {LinkedListNode[]}
    */
   toArray() {
