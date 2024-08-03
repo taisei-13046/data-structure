@@ -9,13 +9,13 @@ describe("HashTable", () => {
 		expect(biggerHashTable.buckets.length).toBe(64);
 	});
 
-	// it("should generate proper hash for specified keys", () => {
-	// 	const hashTable = new HashTable();
+	it("should generate proper hash for specified keys", () => {
+		const hashTable = new HashTable();
 
-	// 	expect(hashTable.hash("a")).toBe(1);
-	// 	expect(hashTable.hash("b")).toBe(2);
-	// 	expect(hashTable.hash("abc")).toBe(6);
-	// });
+		expect(hashTable.hash("a")).toBe(1);
+		expect(hashTable.hash("b")).toBe(2);
+		expect(hashTable.hash("abc")).toBe(6);
+	});
 
 	// it("should set, read and delete data with collisions", () => {
 	// 	const hashTable = new HashTable(3);
