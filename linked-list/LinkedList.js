@@ -122,6 +122,25 @@ export default class LinkedList {
   }
 
   /**
+   * @return {LinkedListNode}
+   */
+  deleteHead() {
+    if (!this.head) {
+      return null;
+    }
+    let deletedHead = null;
+    deletedHead = this.head;
+    if (this.head === this.tail) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = this.head.next;
+    }
+
+    return deletedHead;
+  }
+
+  /**
    * @return {LinkedListNode[]}
    */
   toArray() {
