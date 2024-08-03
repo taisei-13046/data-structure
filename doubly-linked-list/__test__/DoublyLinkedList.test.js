@@ -36,62 +36,62 @@ describe("DoublyLinkedList", () => {
     expect(linkedList.toString()).toBe("3,2,1");
   });
 
-  //it("should create linked list from array", () => {
-  //  const linkedList = new DoublyLinkedList();
-  //  linkedList.fromArray([1, 1, 2, 3, 3, 3, 4, 5]);
+  it("should create linked list from array", () => {
+    const linkedList = new DoublyLinkedList();
+    linkedList.fromArray([1, 1, 2, 3, 3, 3, 4, 5]);
 
-  //  expect(linkedList.toString()).toBe("1,1,2,3,3,3,4,5");
-  //});
+    expect(linkedList.toString()).toBe("1,1,2,3,3,3,4,5");
+  });
 
-  //it("should delete node by value from linked list", () => {
-  //  const linkedList = new DoublyLinkedList();
+  it("should delete node by value from linked list", () => {
+    const linkedList = new DoublyLinkedList();
 
-  //  expect(linkedList.delete(5)).toBeNull();
+    expect(linkedList.delete(5)).toBeNull();
 
-  //  linkedList.append(1);
-  //  linkedList.append(1);
-  //  linkedList.append(2);
-  //  linkedList.append(3);
-  //  linkedList.append(3);
-  //  linkedList.append(3);
-  //  linkedList.append(4);
-  //  linkedList.append(5);
+    linkedList.append(1);
+    linkedList.append(1);
+    linkedList.append(2);
+    linkedList.append(3);
+    linkedList.append(3);
+    linkedList.append(3);
+    linkedList.append(4);
+    linkedList.append(5);
 
-  //  expect(linkedList.head.toString()).toBe("1");
-  //  expect(linkedList.tail.toString()).toBe("5");
+    expect(linkedList.head.toString()).toBe("1");
+    expect(linkedList.tail.toString()).toBe("5");
 
-  //  const deletedNode = linkedList.delete(3);
-  //  expect(deletedNode.value).toBe(3);
-  //  expect(linkedList.tail.previous.previous.value).toBe(2);
-  //  expect(linkedList.toString()).toBe("1,1,2,4,5");
+    const deletedNode = linkedList.delete(3);
+    expect(deletedNode.value).toBe(3);
+    expect(linkedList.tail.previous.previous.value).toBe(2);
+    expect(linkedList.toString()).toBe("1,1,2,4,5");
 
-  //  linkedList.delete(3);
-  //  expect(linkedList.toString()).toBe("1,1,2,4,5");
+    linkedList.delete(3);
+    expect(linkedList.toString()).toBe("1,1,2,4,5");
 
-  //  linkedList.delete(1);
-  //  expect(linkedList.toString()).toBe("2,4,5");
+    linkedList.delete(1);
+    expect(linkedList.toString()).toBe("2,4,5");
 
-  //  expect(linkedList.head.toString()).toBe("2");
-  //  expect(linkedList.head.next.next).toBe(linkedList.tail);
-  //  expect(linkedList.tail.previous.previous).toBe(linkedList.head);
-  //  expect(linkedList.tail.toString()).toBe("5");
+    expect(linkedList.head.toString()).toBe("2");
+    expect(linkedList.head.next.next).toBe(linkedList.tail);
+    expect(linkedList.tail.previous.previous).toBe(linkedList.head);
+    expect(linkedList.tail.toString()).toBe("5");
 
-  //  linkedList.delete(5);
-  //  expect(linkedList.toString()).toBe("2,4");
+    linkedList.delete(5);
+    expect(linkedList.toString()).toBe("2,4");
 
-  //  expect(linkedList.head.toString()).toBe("2");
-  //  expect(linkedList.tail.toString()).toBe("4");
+    expect(linkedList.head.toString()).toBe("2");
+    expect(linkedList.tail.toString()).toBe("4");
 
-  //  linkedList.delete(4);
-  //  expect(linkedList.toString()).toBe("2");
+    linkedList.delete(4);
+    expect(linkedList.toString()).toBe("2");
 
-  //  expect(linkedList.head.toString()).toBe("2");
-  //  expect(linkedList.tail.toString()).toBe("2");
-  //  expect(linkedList.head).toBe(linkedList.tail);
+    expect(linkedList.head.toString()).toBe("2");
+    expect(linkedList.tail.toString()).toBe("2");
+    expect(linkedList.head).toBe(linkedList.tail);
 
-  //  linkedList.delete(2);
-  //  expect(linkedList.toString()).toBe("");
-  //});
+    linkedList.delete(2);
+    expect(linkedList.toString()).toBe("");
+  });
 
   //it("should delete linked list tail", () => {
   //  const linkedList = new DoublyLinkedList();
