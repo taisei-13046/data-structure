@@ -127,32 +127,32 @@ describe("DoublyLinkedList", () => {
     expect(linkedList.tail).toBeNull();
   });
 
-  //it("should delete linked list head", () => {
-  //  const linkedList = new DoublyLinkedList();
+  it("should delete linked list head", () => {
+    const linkedList = new DoublyLinkedList();
 
-  //  expect(linkedList.deleteHead()).toBeNull();
+    expect(linkedList.deleteHead()).toBeNull();
 
-  //  linkedList.append(1);
-  //  linkedList.append(2);
+    linkedList.append(1);
+    linkedList.append(2);
 
-  //  expect(linkedList.head.toString()).toBe("1");
-  //  expect(linkedList.tail.toString()).toBe("2");
+    expect(linkedList.head.toString()).toBe("1");
+    expect(linkedList.tail.toString()).toBe("2");
 
-  //  const deletedNode1 = linkedList.deleteHead();
+    const deletedNode1 = linkedList.deleteHead();
 
-  //  expect(deletedNode1.value).toBe(1);
-  //  expect(linkedList.head.previous).toBeNull();
-  //  expect(linkedList.toString()).toBe("2");
-  //  expect(linkedList.head.toString()).toBe("2");
-  //  expect(linkedList.tail.toString()).toBe("2");
+    expect(deletedNode1.value).toBe(1);
+    expect(linkedList.head.previous).toBeNull();
+    expect(linkedList.toString()).toBe("2");
+    expect(linkedList.head.toString()).toBe("2");
+    expect(linkedList.tail.toString()).toBe("2");
 
-  //  const deletedNode2 = linkedList.deleteHead();
+    const deletedNode2 = linkedList.deleteHead();
 
-  //  expect(deletedNode2.value).toBe(2);
-  //  expect(linkedList.toString()).toBe("");
-  //  expect(linkedList.head).toBeNull();
-  //  expect(linkedList.tail).toBeNull();
-  //});
+    expect(deletedNode2.value).toBe(2);
+    expect(linkedList.toString()).toBe("");
+    expect(linkedList.head).toBeNull();
+    expect(linkedList.tail).toBeNull();
+  });
 
   //it("should be possible to store objects in the list and to print them out", () => {
   //  const linkedList = new DoublyLinkedList();
