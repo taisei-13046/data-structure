@@ -5,6 +5,10 @@ export default class Queue {
 		this.linkedList = new LinkedList();
 	}
 
+	isEmpty() {
+		return !this.linkedList.head;
+	}
+
 	enqueue(value) {
 		this.linkedList.append(value);
 	}
@@ -12,6 +16,13 @@ export default class Queue {
 	dequeue() {
 		const removeHead = this.linkedList.deleteHead();
 		return removeHead ? removeHead.value : null;
+	}
+
+	peek() {
+		if (this.isEmpty()) {
+			return null;
+		}
+		return this.linkedList.head.value;
 	}
 
 	toString(callback) {
