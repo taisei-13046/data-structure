@@ -168,6 +168,36 @@ export default class LinkedList {
   }
 
   /**
+   * Reverse a linked list.
+   * @returns {LinkedList}
+   */
+  reverse() {
+    let currentNode = this.head;
+    let prevNode = null;
+    let nextNode = null;
+
+    while (currentNode) {
+      nextNode = currentNode.next;
+      currentNode.next = prevNode;
+      prevNode = currentNode;
+      currentNode = nextNode;
+    }
+
+    this.tail = this.head;
+    this.head = prevNode;
+  }
+
+  /**
+   * @param {*[]} values - Array of values that need to be converted to linked list.
+   * @return {LinkedList}
+   */
+  fromArray(values) {
+    values.forEach((value) => this.append(value));
+
+    return this;
+  }
+
+  /**
    * @return {LinkedListNode[]}
    */
   toArray() {
