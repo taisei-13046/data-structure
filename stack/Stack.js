@@ -26,6 +26,12 @@ export default class Stack {
 		return returnData ? returnData.value : null;
 	}
 
+	toArray() {
+		return this.linkedList
+			.toArray()
+			.map((linkedListNode) => linkedListNode.value);
+	}
+
 	toString(callback) {
 		return this.linkedList.toString(callback);
 	}

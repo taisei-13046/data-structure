@@ -50,28 +50,28 @@ describe("Stack", () => {
 		expect(stack.isEmpty()).toBe(true);
 	});
 
-	// it("should be possible to push/pop objects", () => {
-	// 	const stack = new Stack();
+	it("should be possible to push/pop objects", () => {
+		const stack = new Stack();
 
-	// 	stack.push({ value: "test1", key: "key1" });
-	// 	stack.push({ value: "test2", key: "key2" });
+		stack.push({ value: "test1", key: "key1" });
+		stack.push({ value: "test2", key: "key2" });
 
-	// 	const stringifier = (value) => `${value.key}:${value.value}`;
+		const stringifier = (value) => `${value.key}:${value.value}`;
 
-	// 	expect(stack.toString(stringifier)).toBe("key2:test2,key1:test1");
-	// 	expect(stack.pop().value).toBe("test2");
-	// 	expect(stack.pop().value).toBe("test1");
-	// });
+		expect(stack.toString(stringifier)).toBe("key2:test2,key1:test1");
+		expect(stack.pop().value).toBe("test2");
+		expect(stack.pop().value).toBe("test1");
+	});
 
-	// it("should be possible to convert stack to array", () => {
-	// 	const stack = new Stack();
+	it("should be possible to convert stack to array", () => {
+		const stack = new Stack();
 
-	// 	expect(stack.peek()).toBeNull();
+		expect(stack.peek()).toBeNull();
 
-	// 	stack.push(1);
-	// 	stack.push(2);
-	// 	stack.push(3);
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
 
-	// 	expect(stack.toArray()).toEqual([3, 2, 1]);
-	// });
+		expect(stack.toArray()).toEqual([3, 2, 1]);
+	});
 });
