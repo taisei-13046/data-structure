@@ -20,21 +20,21 @@ describe("DoublyLinkedList", () => {
     expect(linkedList.toString()).toBe("1,2");
   });
 
-  //it("should prepend node to linked list", () => {
-  //  const linkedList = new DoublyLinkedList();
+  it("should prepend node to linked list", () => {
+    const linkedList = new DoublyLinkedList();
 
-  //  linkedList.prepend(2);
-  //  expect(linkedList.head.toString()).toBe("2");
-  //  expect(linkedList.tail.toString()).toBe("2");
+    linkedList.prepend(2);
+    expect(linkedList.head.toString()).toBe("2");
+    expect(linkedList.tail.toString()).toBe("2");
 
-  //  linkedList.append(1);
-  //  linkedList.prepend(3);
+    linkedList.append(1);
+    linkedList.prepend(3);
 
-  //  expect(linkedList.head.next.next.previous).toBe(linkedList.head.next);
-  //  expect(linkedList.tail.previous.next).toBe(linkedList.tail);
-  //  expect(linkedList.tail.previous.value).toBe(2);
-  //  expect(linkedList.toString()).toBe("3,2,1");
-  //});
+    expect(linkedList.head.next.next.previous).toBe(linkedList.head.next);
+    expect(linkedList.tail.previous.next).toBe(linkedList.tail);
+    expect(linkedList.tail.previous.value).toBe(2);
+    expect(linkedList.toString()).toBe("3,2,1");
+  });
 
   //it("should create linked list from array", () => {
   //  const linkedList = new DoublyLinkedList();

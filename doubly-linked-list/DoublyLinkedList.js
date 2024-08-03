@@ -35,6 +35,25 @@ export default class DoublyLinkedList {
   }
 
   /**
+   * @param {*} value
+   * @return {DoublyLinkedList}
+   */
+  prepend(value) {
+    let newNode = new DoublyLinkedListNode(value);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+      return this;
+    }
+
+    newNode.next = this.head;
+    this.head.previous = newNode;
+    this.head = newNode;
+
+    return this;
+  }
+
+  /**
    * @return {DoublyLinkedListNode[]}
    */
   toArray() {
