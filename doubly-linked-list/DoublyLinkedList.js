@@ -93,6 +93,29 @@ export default class DoublyLinkedList {
   }
 
   /**
+   * @return {DoublyLinkedListNode}
+   */
+  deleteTail() {
+    if (!this.head) {
+      return null;
+    }
+    if (this.head === this.tail) {
+      const deletedTail = this.tail;
+      this.head = null;
+      this.tail = null;
+
+      return deletedTail;
+    }
+
+    let deletedNode = this.tail;
+
+    this.tail = this.tail.previous;
+    this.tail.next = null;
+
+    return deletedNode;
+  }
+
+  /**
    * @return {DoublyLinkedListNode[]}
    */
   toArray() {
