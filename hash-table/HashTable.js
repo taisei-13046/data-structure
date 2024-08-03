@@ -44,4 +44,56 @@ export default class HashTable {
 
 		return hash % this.buckets.length;
 	}
+
+	/**
+	 * @param {string} key
+	 * @param {*} value
+	 */
+	set(key, value) {
+		const hash = this.hash(key);
+		this.keys[key] = hash;
+		const bucketLinkedList = this.buckets[hash];
+		const node = bucketLinkedList.find({ callback: (val) => val.key === key });
+
+		if (!node) {
+			bucketLinkedList.append({ key, value });
+		} else {
+			node.value.value = value;
+		}
+	}
+
+	/**
+	 * @param {string} key
+	 * @return {boolean}
+	 */
+	has(key) {
+		return Object.hasOwnProperty.call(this.keys, key);
+	}
+
+	/**
+	 * @param {string} key
+	 * @return {*}
+	 */
+	get(key) {
+		const bucketLinkedList = this.buckets[this.hash(key)];
+		const node = bucketLinkedList.find({ callback: (val) => val.key === key });
+
+		return node ? node.value.value : undefined;
+	}
+
+	/**
+	 * @param {string} key
+	 * @return {*}
+	 */
+	delete(key) {
+		const bucketLinkedList = this.buckets[this.hash(key)];
+		delete this.keys[this.hash(key)];
+		const node = bucketLinkedList.find({ callback: (val) => val.key === key });
+
+		if (node) {
+			return bucketLinkedList.delete(node.value);
+		}
+
+		return null;
+	}
 }
