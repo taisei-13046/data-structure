@@ -1,3 +1,4 @@
+import { bundlerModuleNameResolver } from "typescript";
 import Comparator from "../utils/Comparator";
 
 export default class Heap {
@@ -119,7 +120,7 @@ export default class Heap {
 
 	poll() {
 		if (this.heapContainer.length === 0) {
-			return;
+			return null;
 		}
 
 		if (this.heapContainer.length === 1) {
@@ -132,6 +133,51 @@ export default class Heap {
 		this.heapifyDown();
 
 		return item;
+	}
+
+	find(item, comparator = this.compare) {
+		const foundItemIndices = [];
+
+		for (
+			let itemIndex = 0;
+			itemIndex < this.heapContainer.length;
+			itemIndex++
+		) {
+			if (comparator.equal(item, this.heapContainer[itemIndex])) {
+				foundItemIndices.push(itemIndex);
+			}
+		}
+
+		return foundItemIndices;
+	}
+
+	remove(item, comparator = this.compare) {
+		const numberOfItemsToRemove = this.find(item, comparator).length;
+
+		for (let i = 0; i < numberOfItemsToRemove; i++) {
+			const indexToRemove = this.find(item, comparator).pop();
+
+			if (indexToRemove === this.heapContainer.length - 1) {
+				this.heapContainer.pop();
+			} else {
+				this.heapContainer[indexToRemove] = this.heapContainer.pop();
+				const parentItem = this.parent(indexToRemove);
+
+				if (
+					(this.hasLeftChild(indexToRemove) && !parentItem) ||
+					this.pairIsInCorrectOrder(
+						parentItem,
+						this.heapContainer[indexToRemove],
+					)
+				) {
+					this.heapifyDown(indexToRemove);
+				} else {
+					this.heapifyUp(indexToRemove);
+				}
+			}
+		}
+
+		return this;
 	}
 
 	toString() {
