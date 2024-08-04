@@ -16,6 +16,14 @@ export default class PriorityQueue extends MinHeap {
 		return this;
 	}
 
+	findByValue(item) {
+		return this.find(item, new Comparator(this.compareValue));
+	}
+
+	hasValue(item) {
+		return this.findByValue(item).length > 0;
+	}
+
 	changePriority(item, priority) {
 		this.remove(item, new Comparator(this.compareValue));
 		this.add(item, priority);
